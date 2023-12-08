@@ -27,18 +27,6 @@ class _HomePageState extends State<HomePage> {
     print(123);
   }
 
-  void setActiveIndex(int index) {
-    if (activeIndex == index) {
-      setState(() {
-        activeIndex = -1;
-      });
-    } else {
-      setState(() {
-        activeIndex = index;
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
@@ -49,10 +37,6 @@ class _HomePageState extends State<HomePage> {
               (travel) => GeneralRowItem(
                 key: ValueKey(travel['createTimeStamp']),
                 travel: travel,
-                isOpen: activeIndex == _travels.indexOf(travel),
-                open: () {
-                  setActiveIndex(_travels.indexOf(travel));
-                },
               ),
             )
             .toList(),

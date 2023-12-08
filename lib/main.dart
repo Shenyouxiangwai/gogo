@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gogo/components/animated_bottom_bar.dart';
+import 'package:gogo/pages/detail_page/detail_page.dart';
 import 'package:gogo/pages/home_page/home_page.dart';
 import 'package:gogo/source/color.dart';
 
@@ -19,6 +20,20 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: true,
       ),
+      routes: {
+        // '/': (context) => HomePage(),
+        '/detail': (context) => const TravelDetailPage(
+              travelDetails: {
+                'travelType': '飞机',
+                'startPoint': '北京',
+                'endPoint': '上海',
+                'travelTime': '2024-12-01',
+                'checkInLocation': '上海迪士尼乐园',
+                'food': '小笼包、糖醋排骨',
+                'guide': '上海旅游攻略',
+              },
+            ),
+      },
       home: Scaffold(
         appBar: AppBar(
           title: const Text('GOGO'),
